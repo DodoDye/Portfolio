@@ -1,0 +1,62 @@
+<h1>Paramètres de compte</h1>
+
+<hr />
+
+<h2>Modifiez votre profil</h2>
+
+<div class="formWrapper">
+  <form id="accountEdit1" action="/api/users" method="PUT">
+    <input type="hidden" name="_method" value="PUT"/>
+    <div class="formError"></div>
+    <div class="formSuccess">Les données ont été sauvegardées</div>
+    <input class="hiddenMailAddressNumberInput" type="hidden" name="mailAddress" />
+    <div class="inputWrapper">
+      <div class="inputLabel">Adresse mail</div>
+      <input class="disabled displayMailAddressInput" type="text" name="displayMailAddress" disabled />
+    </div>
+    <div class="inputWrapper">
+      <div class="inputLabel">Prénom</div>
+      <input class="firstNameInput" type="text" name="firstName" placeholder="John" />
+    </div>
+    <div class="inputWrapper">
+      <div class="inputLabel">Nom</div>
+      <input class="lastNameInput" type="text" name="lastName" placeholder="Smith" />
+    </div>
+    <div class="inputWrapper ctaWrapper">
+      <button type="submit" class="cta green">Sauvegarder</button>
+    </div>
+  </form>
+</div>
+
+<hr />
+<h2>Change Your Password</h2>
+<div class="formWrapper">
+  <form id="accountEdit2" action="/api/users" method="PUT">
+    <input type="hidden" name="_method" value="PUT"/>
+    <div class="formError"></div>
+    <div class="formSuccess">Votre mot de passe a été modifié</div>
+    <input class="hiddenMailAddressNumberInput" type="hidden" name="mailAddress" />
+    <div class="inputWrapper">
+      <div class="inputLabel">Nouveau mot de passe</div>
+      <input type="password" name="password" placeholder="Le meilleur sera le bon!" />
+    </div>
+    <div class="inputWrapper ctaWrapper">
+      <button type="submit" class="cta green">Sauvegarder</button>
+    </div>
+  </form>
+</div>
+
+
+<hr />
+<h2>Supprimer votre compte</h2>
+<div class="formWrapper">
+  <form id="accountEdit3" action="/api/users" method="DELETE">
+    <input type="hidden" name="_method" value="DELETE"/>
+    <div class="formError"></div>
+    <div class="warning">Attention: Cette action ne peut pas être annulée !</div>
+    <input class="hiddenMailAddressNumberInput" type="hidden" name="mailAddress" />
+    <div class="inputWrapper ctaWrapper">
+      <button type="submit" class="cta red">Suppression</button>
+    </div>
+  </form>
+</div>
