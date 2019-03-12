@@ -132,7 +132,7 @@ var httpsServer = https.createServer(httpsServerOptions,function(req,res){
             res.end(payloadString);
 
             
-            var error = typeof(payload['Error']) != 'undefined' ? JSON.stringify(payload) : '';
+            var error = typeof(payload) != 'undefined' && payload.hasOwnProperty('Error') && typeof(payload['Error']) != 'undefined' ? JSON.stringify(payload) : '';
             console.log(helpers.getDate().toUTCString() + ' : ' + method.toUpperCase() + ' /' + trimmedPath + ' from ' + req.connection.remoteAddress + ' ' + statusCode.toString() + ' ' + error);
         });
     });
@@ -151,7 +151,8 @@ var router = {
     'api/users': handlers.users,
     'api/tokens': handlers.tokens,
     'favicon.ico': handlers.favicon,
-    'public': handlers.public
+    'public': handlers.public,
+    '.well-known': handlers.sslforfree,
 };
 
 // Start the HTTP server
